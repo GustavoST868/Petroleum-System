@@ -21,19 +21,54 @@
         <Class IRI="#Oil"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Petroleum"/>
+        <Class IRI="#body_of_rock"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#layer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#limestone_layer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#petroleum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sandstone_layer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#shale_layer"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Natural_Gas"/>
-        <Class IRI="#Petroleum"/>
+        <Class IRI="#petroleum"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Oil"/>
-        <Class IRI="#Petroleum"/>
+        <Class IRI="#petroleum"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Petroleum"/>
+        <Class IRI="#body_of_rock"/>
+        <Class IRI="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000001"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#layer"/>
+        <Class IRI="#body_of_rock"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#limestone_layer"/>
+        <Class IRI="#layer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#petroleum"/>
         <Class IRI="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000009"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sandstone_layer"/>
+        <Class IRI="#layer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#shale_layer"/>
+        <Class IRI="#layer"/>
     </SubClassOf>
     <DisjointClasses>
         <Class IRI="#Natural_Gas"/>
@@ -47,27 +82,27 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Natural_Gas</IRI>
-        <Literal xml:lang="en">Natural Gas</Literal>
+        <Literal xml:lang="en">natural gas</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Oil</IRI>
-        <Literal xml:lang="en">Oil</Literal>
+        <Literal xml:lang="en">oil</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Oil</IRI>
-        <Literal xml:lang="pt-br">Óleo</Literal>
+        <Literal xml:lang="pt-br">óleo</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Petroleum</IRI>
-        <Literal xml:lang="en">Petroleum</Literal>
+        <IRI>#petroleum</IRI>
+        <Literal xml:lang="en">petroleum</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Petroleum</IRI>
-        <Literal xml:lang="pt-br">Petróleo</Literal>
+        <IRI>#petroleum</IRI>
+        <Literal xml:lang="pt-br">petróleo</Literal>
     </AnnotationAssertion>
 </Ontology>
 
