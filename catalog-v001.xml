@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl" uri="DUL.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public">
-        <uri id="Automatically generated entry, Timestamp=1781122532646" name="http://www.semanticweb.org/gustavo/ontologies/2026/5/untitled-ontology-3" uri="petroleum_system.owx"/>
-        <uri id="Automatically generated entry, Timestamp=1781122532646" name="https://www.inf.ufrgs.br/bdi/ontologies/geocore/geocore-full.owl" uri="geocore-full.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1781122532646" name="https://www.inf.ufrgs.br/bdi/ontologies/geospr/geospr-full.owl" uri="geospr-full.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1781365465665" name="http://www.semanticweb.org/gustavo/ontologies/2026/5/untitled-ontology-3" uri="petroleum_system.owx"/>
+        <uri id="Automatically generated entry, Timestamp=1781365465665" name="https://www.inf.ufrgs.br/bdi/ontologies/geocore/geocore-full.owl" uri="geocore-full.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1781365465665" name="https://www.inf.ufrgs.br/bdi/ontologies/geospr/geospr-full.owl" uri="geospr-full.owl"/>
     </group>
 </catalog>

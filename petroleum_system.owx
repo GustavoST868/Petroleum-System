@@ -13,6 +13,7 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Import>http://purl.obolibrary.org/obo/bfo/2020/bfo.owl</Import>
+    <Import>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl</Import>
     <Import>https://www.inf.ufrgs.br/bdi/ontologies/geocore/releases/2024-04-06/geocore-full.owl</Import>
     <Declaration>
         <Class IRI="#Natural_Gas"/>
@@ -24,13 +25,22 @@
         <Class IRI="#Seal"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#accumulation"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#basalto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#basin"/>
     </Declaration>
     <Declaration>
         <Class IRI="#body_of_rock"/>
     </Declaration>
     <Declaration>
         <Class IRI="#dikes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#generation"/>
     </Declaration>
     <Declaration>
         <Class IRI="#igneas_rock"/>
@@ -45,6 +55,9 @@
         <Class IRI="#limestone_layer"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#migration"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#organic_matter"/>
     </Declaration>
     <Declaration>
@@ -55,6 +68,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#porosity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#pressure"/>
     </Declaration>
     <Declaration>
         <Class IRI="#reservoir"/>
@@ -69,9 +85,6 @@
         <Class IRI="#sandstone_layer"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#sedimentary_basin"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#sedimentary_rock"/>
     </Declaration>
     <Declaration>
@@ -84,23 +97,68 @@
         <Class IRI="#source"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#temperature"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#trap"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#contained_in"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#high_concetration_of"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Natural_Gas"/>
         <Class IRI="#petroleum"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Natural_Gas"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#contained_in"/>
+            <Class IRI="#limestone_layer"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Natural_Gas"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#contained_in"/>
+            <Class IRI="#sandstone_layer"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Oil"/>
         <Class IRI="#petroleum"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Oil"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#contained_in"/>
+            <Class IRI="#limestone_layer"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Oil"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#contained_in"/>
+            <Class IRI="#sandstone_layer"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Seal"/>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#accumulation"/>
+        <Class IRI="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#basalto"/>
         <Class IRI="#igneas_rock"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#basin"/>
+        <Class IRI="#body_of_rock"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#body_of_rock"/>
@@ -111,6 +169,10 @@
         <Class IRI="#body_of_rock"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#generation"/>
+        <Class IRI="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#igneas_rock"/>
         <Class IRI="#rock"/>
     </SubClassOf>
@@ -127,12 +189,51 @@
         <Class IRI="#layer"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#limestone_layer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole"/>
+            <Class IRI="#reservoir"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#limestone_layer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000017"/>
+            <Class IRI="#limestone"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#migration"/>
+        <Class IRI="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#organic_matter"/>
         <Class IRI="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000006"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#organic_matter"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#high_concetration_of"/>
+            <Class IRI="#organic_matter"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#permeability"/>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000019"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#permeability"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000197"/>
+            <Class IRI="#dikes"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#permeability"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000197"/>
+            <Class IRI="#layer"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#petroleum"/>
@@ -141,6 +242,38 @@
     <SubClassOf>
         <Class IRI="#porosity"/>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000019"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#porosity"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000197"/>
+            <Class IRI="#dikes"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#porosity"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000197"/>
+            <Class IRI="#layer"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#pressure"/>
+        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000019"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#pressure"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000197"/>
+            <Class IRI="#dikes"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#pressure"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000197"/>
+            <Class IRI="#layer"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#reservoir"/>
@@ -159,8 +292,18 @@
         <Class IRI="#layer"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#sedimentary_basin"/>
-        <Class IRI="#body_of_rock"/>
+        <Class IRI="#sandstone_layer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole"/>
+            <Class IRI="#reservoir"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sandstone_layer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000017"/>
+            <Class IRI="#sandstone"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#sedimentary_rock"/>
@@ -175,17 +318,106 @@
         <Class IRI="#layer"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#shale_layer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole"/>
+            <Class IRI="#Seal"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#shale_layer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole"/>
+            <Class IRI="#source"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#shale_layer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000017"/>
+            <Class IRI="#shale"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#source"/>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#temperature"/>
+        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000019"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#temperature"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000197"/>
+            <Class IRI="#dikes"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#temperature"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000197"/>
+            <Class IRI="#layer"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#trap"/>
         <Class IRI="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000004"/>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#trap"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart"/>
+            <Class IRI="#dikes"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#trap"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart"/>
+            <Class IRI="#layer"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
     <DisjointClasses>
         <Class IRI="#Natural_Gas"/>
         <Class IRI="#Oil"/>
     </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#igneas_rock"/>
+        <Class IRI="#sedimentary_rock"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#limestone"/>
+        <Class IRI="#sandstone"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#limestone"/>
+        <Class IRI="#shale"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#sandstone"/>
+        <Class IRI="#shale"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#high_concetration_of"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#contained_in"/>
+        <Class IRI="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000006"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#high_concetration_of"/>
+        <Class IRI="#organic_matter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#contained_in"/>
+        <Class IRI="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000001"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#high_concetration_of"/>
+        <Class IRI="#shale"/>
+    </ObjectPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Natural_Gas</IRI>
