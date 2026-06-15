@@ -28,6 +28,9 @@
         <Class IRI="#accumulation"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#aggregate_of_rocks"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#basalto"/>
     </Declaration>
     <Declaration>
@@ -103,10 +106,25 @@
         <Class IRI="#trap"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#bounds"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#contained_in"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#high_concetration_of"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#aggregate_of_rocks"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#limestone_layer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#sandstone_layer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#shale_layer"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Natural_Gas"/>
@@ -146,11 +164,29 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Seal"/>
-        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000016"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#accumulation"/>
         <Class IRI="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#accumulation"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000057"/>
+            <Class IRI="#trap"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#aggregate_of_rocks"/>
+        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000027"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#aggregate_of_rocks"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#bounds"/>
+            <Class IRI="#trap"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#basalto"/>
@@ -169,8 +205,36 @@
         <Class IRI="#body_of_rock"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#dikes"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000017"/>
+            <Class IRI="#basalto"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#generation"/>
         <Class IRI="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#generation"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000057"/>
+            <Class IRI="#petroleum"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#generation"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000057"/>
+            <Class IRI="#shale_layer"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#generation"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000063"/>
+            <Class IRI="#migration"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#igneas_rock"/>
@@ -191,7 +255,7 @@
     <SubClassOf>
         <Class IRI="#limestone_layer"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole"/>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
             <Class IRI="#reservoir"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -205,6 +269,13 @@
     <SubClassOf>
         <Class IRI="#migration"/>
         <Class IRI="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#migration"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000063"/>
+            <Class IRI="#accumulation"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#organic_matter"/>
@@ -225,14 +296,21 @@
         <Class IRI="#permeability"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000197"/>
-            <Class IRI="#dikes"/>
+            <Class IRI="#limestone"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#permeability"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000197"/>
-            <Class IRI="#layer"/>
+            <Class IRI="#sandstone"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#permeability"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000197"/>
+            <Class IRI="#shale"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -277,7 +355,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#reservoir"/>
-        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000016"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#rock"/>
@@ -294,7 +372,7 @@
     <SubClassOf>
         <Class IRI="#sandstone_layer"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole"/>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
             <Class IRI="#reservoir"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -320,14 +398,14 @@
     <SubClassOf>
         <Class IRI="#shale_layer"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole"/>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
             <Class IRI="#Seal"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#shale_layer"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRole"/>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
             <Class IRI="#source"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -340,7 +418,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#source"/>
-        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000016"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#temperature"/>
@@ -398,10 +476,38 @@
         <Class IRI="#sandstone"/>
         <Class IRI="#shale"/>
     </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#aggregate_of_rocks"/>
+        <NamedIndividual IRI="#aggregate_of_rocks"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#limestone_layer"/>
+        <NamedIndividual IRI="#limestone_layer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#sandstone_layer"/>
+        <NamedIndividual IRI="#sandstone_layer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#shale_layer"/>
+        <NamedIndividual IRI="#shale_layer"/>
+    </ClassAssertion>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#limestone_layer"/>
+        <NamedIndividual IRI="#sandstone_layer"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#sandstone_layer"/>
+        <NamedIndividual IRI="#shale_layer"/>
+    </DifferentIndividuals>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#high_concetration_of"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#bounds"/>
+        <Class IRI="#aggregate_of_rocks"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#contained_in"/>
         <Class IRI="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000006"/>
@@ -410,6 +516,10 @@
         <ObjectProperty IRI="#high_concetration_of"/>
         <Class IRI="#organic_matter"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#bounds"/>
+        <Class IRI="#trap"/>
+    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#contained_in"/>
         <Class IRI="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000001"/>
@@ -421,12 +531,22 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Natural_Gas</IRI>
-        <Literal xml:lang="pt-br">Gás Natural</Literal>
+        <Literal xml:lang="pt-br">gás natural</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Natural_Gas</IRI>
         <Literal xml:lang="en">natural gas</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#Natural_Gas</IRI>
+        <Literal xml:lang="pt-br">Gás Natural é uma especialização de petróleo cuja matéria se apresenta no estado gasoso em condições de superfície, podendo ser de origem termogênica ou biogênica.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#Natural_Gas</IRI>
+        <Literal xml:lang="en">Natural Gas is a specialization of petroleum whose material is present in a gaseous state under surface conditions and may originate from thermogenic or biogenic processes.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -439,14 +559,314 @@
         <Literal xml:lang="pt-br">óleo</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#Oil</IRI>
+        <Literal xml:lang="en">Oil is a hydrocarbon whose matter is in a liquid state at surface conditions, being a thermally generated hydrocarbon from organic matter within a specific thermal window.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#Oil</IRI>
+        <Literal xml:lang="pt-br">Óleo é um hidrocarboneto cuja matéria se apresenta no estado líquido em condições de superfície, sendo um hidrocarboneto gerado termicamente a partir da matéria orgânica em uma janela térmica específica.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Seal</IRI>
         <Literal xml:lang="en">seal</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#Seal</IRI>
+        <Literal xml:lang="en">selo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#Seal</IRI>
+        <Literal xml:lang="en">Seal is a disposition inhering in a rock layer that confers the capacity to prevent or significantly restrict the migration of hydrocarbons owing to its low permeability and high capillary entry pressure.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#Seal</IRI>
+        <Literal xml:lang="pt-br">Selo é uma disposição de uma camada de rocha  que confere a capacidade de impedir ou restringir o fluxo vertical de hidrocarbonetos devido à sua permeabilidade  baixa  e alta pressão de entrada.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#accumulation</IRI>
+        <Literal xml:lang="en">accumulation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#accumulation</IRI>
+        <Literal xml:lang="pt-br">acumulação</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#accumulation</IRI>
+        <Literal xml:lang="en">Accumulation is the final event in which migrated hydrocarbons become concentrated within a geological trap, overlain by a rock layer bearing a seal disposition, thereby forming a hydrocarbon accumulation or field.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#accumulation</IRI>
+        <Literal xml:lang="pt-br">Acumulação é um evento final no qual os hidrocarbonetos migrados são concentrados em uma armadilha geológica, sobrepostos por uma rocha com disposição selo, formando um campo ou acumulação.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#aggregate_of_rocks</IRI>
+        <Literal xml:lang="en">aggregate of rocks</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#aggregate_of_rocks</IRI>
+        <Literal xml:lang="pt-br">agregado de rochas</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#aggregate_of_rocks</IRI>
+        <Literal xml:lang="pt-br">Agregado de Rochas é um Object Aggregate  que reúne múltiplos corpos de rocha com limites definidos, como uma unidade litoestratigráfica composta ou um conjunto de camadas em uma bacia.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#aggregate_of_rocks</IRI>
+        <Literal xml:lang="en">An Aggregate of Rocks is an Object Aggregate that comprises multiple rock bodies with defined boundaries, such as a composite lithostratigraphic unit or a set of layers within a basin.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#basalto</IRI>
         <Literal xml:lang="en">basalt</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#basalto</IRI>
+        <Literal xml:lang="pt-br">basalto</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#basalto</IRI>
+        <Literal xml:lang="en">Basalt is an igneous rock formed by the rapid cooling of lava at the Earth&apos;s surface or on the ocean floor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#basalto</IRI>
+        <Literal xml:lang="pt-br">Basalto é uma rocha ígnea, resultante do resfriamento rápido de lava na superfície terrestre ou no assoalho oceânico.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#basin</IRI>
+        <Literal xml:lang="pt-br">bacia</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#basin</IRI>
+        <Literal xml:lang="en">basin</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#basin</IRI>
+        <Literal xml:lang="en">A Basin is a rock body corresponding to a long-lived topographic depression filled with sedimentary rocks and formed by tectonic processes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#basin</IRI>
+        <Literal xml:lang="pt-br">Bacia é um corpo de rocha que corresponde a uma depressão topográfica de longa duração preenchida por rochas sedimentares, formada por processos tectônicos.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#body_of_rock</IRI>
+        <Literal xml:lang="en">body of rock</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#body_of_rock</IRI>
+        <Literal xml:lang="pt-br">corpo de rocha</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#body_of_rock</IRI>
+        <Literal xml:lang="en">Body of Rock is a geological object consisting of a continuous and spatially bounded volume of rock, generated by one or more geological processes and capable of being mapped as a lithostratigraphic or tectonic unit.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#body_of_rock</IRI>
+        <Literal xml:lang="pt-br">Corpo de Rocha é um objeto geológico que consiste em um volume contínuo e espacialmente delimitado de rocha, gerado por um ou mais processos geológicos, podendo ser mapeado como uma unidade litoestratigráfica ou tectônica.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#dikes</IRI>
+        <Literal xml:lang="en">dikes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#dikes</IRI>
+        <Literal xml:lang="pt-br">diques</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#dikes</IRI>
+        <Literal xml:lang="en">Dikes are tabular, discordant rock bodies formed by the intrusion of igneous rock.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#dikes</IRI>
+        <Literal xml:lang="pt-br">Diques são corpos de rocha tabulares, discordantes, resultantes da intrusão de rocha ígnea.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#generation</IRI>
+        <Literal xml:lang="en">generation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#generation</IRI>
+        <Literal xml:lang="pt-br">geração</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#generation</IRI>
+        <Literal xml:lang="en">Generation is an event in which the organic matter contained within a rock layer bearing a source disposition is thermally or biologically transformed into hydrocarbons under specific pressure and temperature conditions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#generation</IRI>
+        <Literal xml:lang="pt-br">Geração é um evento no qual a matéria orgânica contida em uma rocha com disposição de geradora é termicamente ou biologicamente convertida em hidrocarbonetos, sob condições específicas de pressão e temperatura.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#igneas_rock</IRI>
+        <Literal xml:lang="en">igneas rock</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#igneas_rock</IRI>
+        <Literal xml:lang="pt-br">rocha ígnea</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#igneas_rock</IRI>
+        <Literal xml:lang="en">Igneous rock is a rock formed by the cooling and solidification of magma or lava, whose texture and mineral composition reflect the thermal history of its crystallization.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#igneas_rock</IRI>
+        <Literal xml:lang="pt-br">Rocha Ígnea é uma rocha formada pelo resfriamento e solidificação do magma ou lava, cuja textura e composição mineral refletem a história térmica de sua cristalização.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#layer</IRI>
+        <Literal xml:lang="pt-br">camada</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#layer</IRI>
+        <Literal xml:lang="en">layer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#layer</IRI>
+        <Literal xml:lang="en">A Layer is a rock body characterized by a tabular or lens-shaped geometry, distinguished by physical discontinuities that define its upper and lower boundaries. It represents the basic unit of stratigraphic sequences and may be composed of different rock types.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#layer</IRI>
+        <Literal xml:lang="pt-br">Camada é um corpo de rocha que possui formato de camada ou de lente, sendo individualizado por descontinuidades físicas que constituem seus limites superior e inferior. Ele representa a unidade básica das sequências estratigráficas e pode ser composto por diferentes tipos de rocha.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#limestone</IRI>
+        <Literal xml:lang="pt-br">calcário</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#limestone</IRI>
+        <Literal xml:lang="en">limestone</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#limestone</IRI>
+        <Literal xml:lang="pt-br">Calcário é uma rocha sedimentar constituída predominantemente por carbonato de cálcio, geralmente de origem biogênica ou química, podendo atuar como reservatório ou rocha selante.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#limestone</IRI>
+        <Literal xml:lang="en">Limestone is a sedimentary rock composed predominantly of calcium carbonate, typically of biogenic or chemical origin.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#limestone_layer</IRI>
+        <Literal xml:lang="pt-br">camada de calcário</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#limestone_layer</IRI>
+        <Literal xml:lang="en">limestone layer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#limestone_layer</IRI>
+        <Literal xml:lang="en">A Limestone Layer is a layer constituted by limestone.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#limestone_layer</IRI>
+        <Literal xml:lang="pt-br">Camada de Calcário é uma camada constituída por calcário.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#migration</IRI>
+        <Literal xml:lang="en">migration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#migration</IRI>
+        <Literal xml:lang="pt-br">migração</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#migration</IRI>
+        <Literal xml:lang="en">Migration is an event in which generated hydrocarbons are naturally transported from a rock layer bearing a source disposition through a reservoir rock or fracture system toward a trap.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#migration</IRI>
+        <Literal xml:lang="pt-br">Migração é um evento no qual os hidrocarbonetos gerados são transportados naturalmente desde a rocha com disposição geradora através de uma rocha reservatório ou sistema de fraturas  até uma armadilha.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#organic_matter</IRI>
+        <Literal xml:lang="pt-br">Matéria Orgânica</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#organic_matter</IRI>
+        <Literal xml:lang="en">organic matter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#organic_matter</IRI>
+        <Literal xml:lang="pt-br">Matéria Orgânica é um material da terra constituído por compostos derivados de organismos vivos, depositado em ambientes sedimentares, que sob condições adequadas de pressão e temperatura transforma-se em hidrocarbonetos.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#organic_matter</IRI>
+        <Literal xml:lang="en">Organic Matter is an Earth Material composed of compounds derived from living organisms, deposited in sedimentary environments, which under suitable pressure and temperature conditions transforms into hydrocarbons.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#permeability</IRI>
+        <Literal xml:lang="pt-br">permeabilidade</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#permeability</IRI>
+        <Literal xml:lang="en">permeability</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#permeability</IRI>
+        <Literal xml:lang="pt-br">Permeabilidade é uma qualidade que representa a capacidade do material rochoso de transmitir fluidos através de sua rede de poros interconectados.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#permeability</IRI>
+        <Literal xml:lang="en">Permeability is a quality that represents the ability of a rock material to transmit fluids through its network of interconnected pore spaces.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -457,6 +877,246 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#petroleum</IRI>
         <Literal xml:lang="pt-br">petróleo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#petroleum</IRI>
+        <Literal xml:lang="en">Petroleum is an Earth Fluid that constitutes a natural mixture of hydrocarbon compounds, occurring in gaseous, liquid, or solid states, genetically related to an active source rock.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#petroleum</IRI>
+        <Literal xml:lang="pt-br">Petróleo é um tipo de  fluido da terra, que constitui uma mistura natural de compostos de hidrocarbonetos, de ocorrência gasosa, líquida ou sólida, geneticamente relacionada a uma rocha geradora ativa.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#porosity</IRI>
+        <Literal xml:lang="pt-br">porosidade</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#porosity</IRI>
+        <Literal xml:lang="en">porosity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#porosity</IRI>
+        <Literal xml:lang="en">Porosity is a quality inhering in a rock body that is defined as the fraction of its total volume occupied by void spaces.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#porosity</IRI>
+        <Literal xml:lang="pt-br">Porosity é uma qulalidade, definida como a fração do volume total da rocha ocupada por espaços vazios .</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#pressure</IRI>
+        <Literal xml:lang="en">pressure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#pressure</IRI>
+        <Literal xml:lang="pt-br">pressão</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#pressure</IRI>
+        <Literal xml:lang="en">Pressure is a quality inhering in a rock body or fluid that quantifies the force exerted per unit area and plays an essential role in the generation, migration, and retention of hydrocarbons.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#pressure</IRI>
+        <Literal xml:lang="pt-br">Pressão é uma qualidade que quantifica a força aplicada por unidade de área sobre um corpo de rocha ou fluido, sendo um fator essencial para os processos de geração, migração e retenção de hidrocarbonetos.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#reservoir</IRI>
+        <Literal xml:lang="pt-br">reservatório</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#reservoir</IRI>
+        <Literal xml:lang="en">reservoir</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#reservoir</IRI>
+        <Literal xml:lang="pt-br">Reservatório é uma disposição de uma camada de rocha que confere a capacidade de armazenar e transmitir fluidos por meio de sua porosidade e permeabilidade efetivas.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#reservoir</IRI>
+        <Literal xml:lang="en">Reservoir is a disposition inhering in a rock layer that confers the capacity to store and transmit fluids through its effective porosity and permeability.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#rock</IRI>
+        <Literal xml:lang="pt-br">rocha</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#rock</IRI>
+        <Literal xml:lang="en">rock</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#rock</IRI>
+        <Literal xml:lang="pt-br">Rocha é um material da terra, que não possui critério de unidade próprio, sendo sua identidade definida por composição e origem.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#rock</IRI>
+        <Literal xml:lang="en">Rock is an Earth material that lacks its own unity criterion, with its identity being determined by its composition and origin.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#sandstone</IRI>
+        <Literal xml:lang="pt-br">arenito</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#sandstone</IRI>
+        <Literal xml:lang="en">sandstone</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#sandstone</IRI>
+        <Literal xml:lang="pt-br">Arenito é uma rocha sedimentar composta por grãos de areia cimentados, caracterizada por porosidade e permeabilidade intergranulares.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#sandstone</IRI>
+        <Literal xml:lang="en">Sandstone is a sedimentary rock composed of cemented sand-sized grains, characterized by intergranular porosity and permeability.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#sandstone_layer</IRI>
+        <Literal xml:lang="pt-br">camada de arenito</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#sandstone_layer</IRI>
+        <Literal xml:lang="en">sandstone layer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#sandstone_layer</IRI>
+        <Literal xml:lang="en">A Sandstone Layer is a layer constituted by sandstone.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#sandstone_layer</IRI>
+        <Literal xml:lang="pt-br">Camada de Arenito é uma camada constituída por arenito.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#sedimentary_rock</IRI>
+        <Literal xml:lang="pt-br">rocha sedimentar</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#sedimentary_rock</IRI>
+        <Literal xml:lang="en">sedimentary rock</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#shale</IRI>
+        <Literal xml:lang="pt-br">folhelho</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#shale</IRI>
+        <Literal xml:lang="en">shalee</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#shale</IRI>
+        <Literal xml:lang="pt-br">Folhelho é uma rocha sedimentar fina, laminada, composta por partículas de tamanho argila e silte, rica em matéria orgânica.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#shale</IRI>
+        <Literal xml:lang="en">Shale is a fine-grained, laminated sedimentary rock composed of clay- and silt-sized particles and enriched in organic matter.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#shale_layer</IRI>
+        <Literal xml:lang="pt-br">camada de folhelho</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#shale_layer</IRI>
+        <Literal xml:lang="en">shale layer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#shale_layer</IRI>
+        <Literal xml:lang="en">A Shale Layer is a layer constituted by shale.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#shale_layer</IRI>
+        <Literal xml:lang="pt-br">Camada de Folhelho  é uma camada constituída por folhelho.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#source</IRI>
+        <Literal xml:lang="pt-br">geradoura</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#source</IRI>
+        <Literal xml:lang="en">source</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#source</IRI>
+        <Literal xml:lang="pt-br">Geradora é uma disposição de uma camada de rocha que, sob condições específicas de pressão e temperatura, confere a capacidade de gerar e expelir hidrocarbonetos a partir da matéria orgânica nela contida.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#source</IRI>
+        <Literal xml:lang="en">Source is a disposition inhering in a rock layer that, under specific pressure and temperature conditions, confers the capacity to generate and expel hydrocarbons from the organic matter contained within it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#temperature</IRI>
+        <Literal xml:lang="pt-br">temperatura</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#temperature</IRI>
+        <Literal xml:lang="en">temperature</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#temperature</IRI>
+        <Literal xml:lang="en">Temperature is a quality inhering in a material entity that represents the measure of the average kinetic energy of its constituent particles.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#temperature</IRI>
+        <Literal xml:lang="pt-br">Temperature é uma qualidade, representando a medida da energia cinética média das partículas constituintes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#trap</IRI>
+        <Literal xml:lang="pt-br">armadilha</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#trap</IRI>
+        <Literal xml:lang="en">trap</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#trap</IRI>
+        <Literal xml:lang="en">A Trap is a geological structure that defines a tectonic or stratigraphic geometry and is materialized in one or more rock bodies.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#trap</IRI>
+        <Literal xml:lang="pt-br">Armadilha é uma estrutura geológica  que configura uma geometria tectônica ou estratigráfica, materializada em um ou mais corpos rochosos.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
