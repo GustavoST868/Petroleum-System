@@ -35,7 +35,7 @@ Entidades que existem de forma completa em qualquer instante de tempo e não dep
 
 **Materiais Terrestres / Earth Material**
 
-| Entidade         | Definição                                                                                                                                                                                                   |
+| Entidade         | Descrição                                                                                                                                                                                                   |
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Organic Matter   | Um material terrestre que é composto por compostos de carbono de origem biológica, presente em rochas geradoras, e que sob condições específicas de temperatura e pressão se transforma em hidrocarbonetos. |
 | Rock             | Um material terrestre que é um agregado natural de minerais e/ou matéria orgânica, cuja identidade é determinada por sua composição e origem.                                                               |
@@ -48,7 +48,7 @@ Entidades que existem de forma completa em qualquer instante de tempo e não dep
 
 **Objetos Geológicos / GeologicalObject**
 
-| Entidade           | Definição                                                                                                                                                     |
+| Entidade           | Descrição                                                                                                                                                     |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Body of Rock       | Um objeto geológico que é um volume contínuo de rocha com extensão espacial definida, podendo corresponder a uma unidade litoestratigráfica.                  |
 | Basin              | Um corpo rochoso que é uma depressão da crosta terrestre propícia ao acúmulo de sedimentos e à formação de sistemas petrolíferos.                             |
@@ -61,7 +61,7 @@ Entidades que existem de forma completa em qualquer instante de tempo e não dep
 
 **Estruturas Geológicas / GeologicalStructure**
 
-| Entidade | Definição                                                                                                                                                                                  |
+| Entidade | Descrição                                                                                                                                                                                  |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Trap     | Uma estrutura geológica que configura uma geometria tectônica ou estratigráfica, materializada em um ou mais corpos rochosos, capaz de promover o acúmulo e a retenção de hidrocarbonetos. |
 
@@ -73,7 +73,7 @@ Entidades que dependem de um portador (*bearer*) para existir, sem existência i
 
 #### Qualidades
 
-| Entidade     | Definição                                                                                                                                                                             | Portador     |
+| Entidade     | Descrição                                                                                                                                                                             | Portador     |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
 | Porosity     | Uma qualidade que inere em um material rochoso e representa a proporção volumétrica de espaços vazios disponíveis para o armazenamento de fluidos.                                    | Rock, Layer  |
 | Permeability | Uma qualidade que inere em um material rochoso e representa a capacidade de transmitir fluidos por meio de uma rede de poros interconectados.                                         | Rock         |
@@ -82,7 +82,7 @@ Entidades que dependem de um portador (*bearer*) para existir, sem existência i
 
 #### Disposições
 
-| Entidade  | Definição                                                                                                                                                                                                 | Portador                         |
+| Entidade  | Descrição                                                                                                                                                                                                 | Portador                         |
 | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
 | Source    | Uma disposição que inere em uma camada de rocha e, sob condições específicas de temperatura e pressão, confere a capacidade de gerar e expelir hidrocarbonetos a partir da matéria orgânica nela contida. | Shale Layer                      |
 | Seal      | Uma disposição que inere em uma camada de rocha e confere a capacidade de impedir a migração de hidrocarbonetos por meio de baixa permeabilidade.                                                         | Shale Layer                      |
