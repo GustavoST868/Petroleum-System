@@ -19,7 +19,7 @@ As questões de competência abaixo orientaram o desenvolvimento da ontologia:
 5. O que distingue as diferentes disposições relacionadas as corpos rochozos em um sistema petrolífero, como selo, geradoura e reservatório?
 6. Como um sistema petrolífero pode ser formalmente representado em termos de entidades geológicas, qualidades, substâncias, processos e seus relacionamentos?
 
----
+
 
 ### 3.1 Continuantes Independentes
 
@@ -65,7 +65,6 @@ Entidades que existem de forma completa em qualquer instante de tempo e não dep
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Trap     | Uma estrutura geológica que configura uma geometria tectônica ou estratigráfica, materializada em um ou mais corpos rochosos, capaz de promover o acúmulo e a retenção de hidrocarbonetos. |
 
----
 
 ### 3.2 Continuantes Dependentes
 
@@ -88,7 +87,7 @@ Entidades que dependem de um portador (*bearer*) para existir, sem existência i
 | Seal      | Uma disposição que inere em uma camada de rocha e confere a capacidade de impedir a migração de hidrocarbonetos por meio de baixa permeabilidade.                                                         | Shale Layer                      |
 | Reservoir | Uma disposição que inere em uma camada de rocha e confere a capacidade de armazenar e transmitir fluidos por meio de sua porosidade e permeabilidade efetivas.                                            | Sandstone Layer, Limestone Layer |
 
----
+
 
 ### 3.3 Ocorrentes
 
@@ -100,7 +99,7 @@ Entidades que se desenvolvem no tempo e possuem partes temporais.
 | Migration    | Um processo que consiste no transporte natural dos hidrocarbonetos desde a rocha geradora até uma armadilha geológica, por meio de caminhos permeáveis.                 |
 | Accumulation | Um processo que consiste na concentração de hidrocarbonetos em uma armadilha geológica, resultando na formação de um depósito de petróleo e/ou gás.                     |
 
----
+
 
 ### 3.4 Relações
 
