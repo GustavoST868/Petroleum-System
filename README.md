@@ -102,7 +102,7 @@ Entidades que se desenvolvem no tempo e possuem partes temporais.
 
 ---
 
-### 3.4 Relações (Object Properties)
+### 3.4 Relações
 
 | Relação               | Semântica                                                                                            |
 | --------------------- | ---------------------------------------------------------------------------------------------------- |
