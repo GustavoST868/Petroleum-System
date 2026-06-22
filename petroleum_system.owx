@@ -289,13 +289,6 @@
         <Class IRI="https://www.inf.ufrgs.br/bdi/ontologies/GEOCORE_0000006"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#organic_matter"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#high_concetration_of"/>
-            <Class IRI="#organic_matter"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#permeability"/>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000019"/>
     </SubClassOf>
@@ -397,6 +390,13 @@
     <SubClassOf>
         <Class IRI="#shale"/>
         <Class IRI="#sedimentary_rock"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#shale"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#high_concetration_of"/>
+            <Class IRI="#organic_matter"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#shale_layer"/>
