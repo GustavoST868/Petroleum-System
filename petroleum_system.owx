@@ -28,7 +28,7 @@
         <Class IRI="#accumulation"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#aggregate_of_rocks"/>
+        <Class IRI="#aggregate_of_rock_bodies"/>
     </Declaration>
     <Declaration>
         <Class IRI="#basalto"/>
@@ -178,11 +178,18 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#aggregate_of_rocks"/>
+        <Class IRI="#aggregate_of_rock_bodies"/>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000027"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#aggregate_of_rocks"/>
+        <Class IRI="#aggregate_of_rock_bodies"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart"/>
+            <Class IRI="#body_of_rock"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#aggregate_of_rock_bodies"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#bounds"/>
             <Class IRI="#trap"/>
@@ -461,6 +468,14 @@
         <Class IRI="#Oil"/>
     </DisjointClasses>
     <DisjointClasses>
+        <Class IRI="#basin"/>
+        <Class IRI="#dikes"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#basin"/>
+        <Class IRI="#layer"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#igneas_rock"/>
         <Class IRI="#sedimentary_rock"/>
     </DisjointClasses>
@@ -477,7 +492,7 @@
         <Class IRI="#shale"/>
     </DisjointClasses>
     <ClassAssertion>
-        <Class IRI="#aggregate_of_rocks"/>
+        <Class IRI="#aggregate_of_rock_bodies"/>
         <NamedIndividual IRI="#aggregate_of_rocks"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -506,7 +521,7 @@
     </SubObjectPropertyOf>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#bounds"/>
-        <Class IRI="#aggregate_of_rocks"/>
+        <Class IRI="#aggregate_of_rock_bodies"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#contained_in"/>
@@ -529,6 +544,12 @@
         <Class IRI="#shale"/>
     </ObjectPropertyRange>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Natural_Gas</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Natural_Gas</IRI>
         <Literal xml:lang="pt-br">gás natural</Literal>
@@ -547,6 +568,12 @@
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
         <IRI>#Natural_Gas</IRI>
         <Literal xml:lang="en">Natural Gas is a specialization of petroleum whose material is present in a gaseous state under surface conditions and may originate from thermogenic or biogenic processes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Oil</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -569,6 +596,12 @@
         <Literal xml:lang="pt-br">Óleo é um hidrocarboneto cuja matéria se apresenta no estado líquido em condições de superfície, sendo um hidrocarboneto gerado termicamente a partir da matéria orgânica em uma janela térmica específica.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Seal</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Seal</IRI>
         <Literal xml:lang="en">seal</Literal>
@@ -587,6 +620,12 @@
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
         <IRI>#Seal</IRI>
         <Literal xml:lang="pt-br">Selo é uma disposição de uma camada de rocha  que confere a capacidade de impedir ou restringir o fluxo vertical de hidrocarbonetos devido à sua permeabilidade  baixa  e alta pressão de entrada.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#accumulation</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
@@ -609,24 +648,36 @@
         <Literal xml:lang="pt-br">Acumulação é um evento final no qual os hidrocarbonetos migrados são concentrados em uma armadilha geológica, sobrepostos por uma rocha com disposição selo, formando um campo ou acumulação.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
-        <IRI>#aggregate_of_rocks</IRI>
-        <Literal xml:lang="en">aggregate of rocks</Literal>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#aggregate_of_rock_bodies</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
-        <IRI>#aggregate_of_rocks</IRI>
+        <IRI>#aggregate_of_rock_bodies</IRI>
+        <Literal xml:lang="en">Aggregate of Rock Bodies</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <IRI>#aggregate_of_rock_bodies</IRI>
         <Literal xml:lang="pt-br">agregado de rochas</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
-        <IRI>#aggregate_of_rocks</IRI>
-        <Literal xml:lang="pt-br">Agregado de Rochas é um Object Aggregate  que reúne múltiplos corpos de rocha com limites definidos, como uma unidade litoestratigráfica composta ou um conjunto de camadas em uma bacia.</Literal>
+        <IRI>#aggregate_of_rock_bodies</IRI>
+        <Literal xml:lang="pt-br">Agregado de Corpos de Rocha é um Object Aggregate  que reúne múltiplos corpos de rocha com limites definidos, como uma unidade litoestratigráfica composta ou um conjunto de camadas em uma bacia.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
-        <IRI>#aggregate_of_rocks</IRI>
-        <Literal xml:lang="en">An Aggregate of Rocks is an Object Aggregate that comprises multiple rock bodies with defined boundaries, such as a composite lithostratigraphic unit or a set of layers within a basin.</Literal>
+        <IRI>#aggregate_of_rock_bodies</IRI>
+        <Literal xml:lang="en">An Aggregate of Rocks Bodies is an Object Aggregate that comprises multiple rock bodies with defined boundaries, such as a composite lithostratigraphic unit or a set of layers within a basin.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#basalto</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -649,6 +700,12 @@
         <Literal xml:lang="pt-br">Basalto é uma rocha ígnea, resultante do resfriamento rápido de lava na superfície terrestre ou no assoalho oceânico.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#basin</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
         <IRI>#basin</IRI>
         <Literal xml:lang="pt-br">bacia</Literal>
@@ -667,6 +724,12 @@
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
         <IRI>#basin</IRI>
         <Literal xml:lang="pt-br">Bacia é um corpo de rocha que corresponde a uma depressão topográfica de longa duração preenchida por rochas sedimentares, formada por processos tectônicos.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#body_of_rock</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
@@ -709,6 +772,12 @@
         <Literal xml:lang="pt-br">Diques são corpos de rocha tabulares, discordantes, resultantes da intrusão de rocha ígnea.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#generation</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
         <IRI>#generation</IRI>
         <Literal xml:lang="en">generation</Literal>
@@ -727,6 +796,12 @@
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
         <IRI>#generation</IRI>
         <Literal xml:lang="pt-br">Geração é um evento no qual a matéria orgânica contida em uma rocha com disposição de geradora é termicamente ou biologicamente convertida em hidrocarbonetos, sob condições específicas de pressão e temperatura.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#igneas_rock</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
@@ -749,6 +824,12 @@
         <Literal xml:lang="pt-br">Rocha Ígnea é uma rocha formada pelo resfriamento e solidificação do magma ou lava, cuja textura e composição mineral refletem a história térmica de sua cristalização.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#layer</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
         <IRI>#layer</IRI>
         <Literal xml:lang="pt-br">camada</Literal>
@@ -767,6 +848,12 @@
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
         <IRI>#layer</IRI>
         <Literal xml:lang="pt-br">Camada é um corpo de rocha que possui formato de camada ou de lente, sendo individualizado por descontinuidades físicas que constituem seus limites superior e inferior. Ele representa a unidade básica das sequências estratigráficas e pode ser composto por diferentes tipos de rocha.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#limestone</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
@@ -789,6 +876,12 @@
         <Literal xml:lang="en">Limestone is a sedimentary rock composed predominantly of calcium carbonate, typically of biogenic or chemical origin.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#limestone_layer</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
         <IRI>#limestone_layer</IRI>
         <Literal xml:lang="pt-br">camada de calcário</Literal>
@@ -807,6 +900,12 @@
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
         <IRI>#limestone_layer</IRI>
         <Literal xml:lang="pt-br">Camada de Calcário é uma camada constituída por calcário.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#migration</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
@@ -829,6 +928,12 @@
         <Literal xml:lang="pt-br">Migração é um evento no qual os hidrocarbonetos gerados são transportados naturalmente desde a rocha com disposição geradora através de uma rocha reservatório ou sistema de fraturas  até uma armadilha.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#organic_matter</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#organic_matter</IRI>
         <Literal xml:lang="pt-br">Matéria Orgânica</Literal>
@@ -847,6 +952,12 @@
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
         <IRI>#organic_matter</IRI>
         <Literal xml:lang="en">Organic Matter is an Earth Material composed of compounds derived from living organisms, deposited in sedimentary environments, which under suitable pressure and temperature conditions transforms into hydrocarbons.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#permeability</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
@@ -869,6 +980,12 @@
         <Literal xml:lang="en">Permeability is a quality that represents the ability of a rock material to transmit fluids through its network of interconnected pore spaces.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#petroleum</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#petroleum</IRI>
         <Literal xml:lang="en">petroleum</Literal>
@@ -887,6 +1004,12 @@
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
         <IRI>#petroleum</IRI>
         <Literal xml:lang="pt-br">Petróleo é um tipo de  fluido da terra, que constitui uma mistura natural de compostos de hidrocarbonetos, de ocorrência gasosa, líquida ou sólida, geneticamente relacionada a uma rocha geradora ativa.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#porosity</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
@@ -909,6 +1032,12 @@
         <Literal xml:lang="pt-br">Porosity é uma qulalidade, definida como a fração do volume total da rocha ocupada por espaços vazios .</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#pressure</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
         <IRI>#pressure</IRI>
         <Literal xml:lang="en">pressure</Literal>
@@ -927,6 +1056,12 @@
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
         <IRI>#pressure</IRI>
         <Literal xml:lang="pt-br">Pressão é uma qualidade que quantifica a força aplicada por unidade de área sobre um corpo de rocha ou fluido, sendo um fator essencial para os processos de geração, migração e retenção de hidrocarbonetos.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#reservoir</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
@@ -949,6 +1084,12 @@
         <Literal xml:lang="en">Reservoir is a disposition inhering in a rock layer that confers the capacity to store and transmit fluids through its effective porosity and permeability.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#rock</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
         <IRI>#rock</IRI>
         <Literal xml:lang="pt-br">rocha</Literal>
@@ -967,6 +1108,12 @@
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
         <IRI>#rock</IRI>
         <Literal xml:lang="en">Rock is an Earth material that lacks its own unity criterion, with its identity being determined by its composition and origin.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#sandstone</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
@@ -989,6 +1136,12 @@
         <Literal xml:lang="en">Sandstone is a sedimentary rock composed of cemented sand-sized grains, characterized by intergranular porosity and permeability.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#sandstone_layer</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
         <IRI>#sandstone_layer</IRI>
         <Literal xml:lang="pt-br">camada de arenito</Literal>
@@ -1009,6 +1162,14 @@
         <Literal xml:lang="pt-br">Camada de Arenito é uma camada constituída por arenito.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#sedimentary_rock</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.
+
+Abel, M., Perrin, M., &amp; Carbonera, J. L. (2015). Ontological analysis for information integration in geomodeling. Earth Science Informatics, 8(1), 21-36.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
         <IRI>#sedimentary_rock</IRI>
         <Literal xml:lang="pt-br">rocha sedimentar</Literal>
@@ -1017,6 +1178,22 @@
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
         <IRI>#sedimentary_rock</IRI>
         <Literal xml:lang="en">sedimentary rock</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#sedimentary_rock</IRI>
+        <Literal xml:lang="pt-br">Rocha que é gerada por um Processo Geológico de sedimentação, envolvendo a deposição e a cimentação de partículas minerais ou orgânicas na superfície ou próximo à superfície da Terra.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>#sedimentary_rock</IRI>
+        <Literal xml:lang="en">Rock that is generated by a Geological Process of sedimentation, involving the deposition and cementation of mineral or organic particles on or near the Earth&apos;s surface.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#shale</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
@@ -1039,6 +1216,12 @@
         <Literal xml:lang="en">Shale is a fine-grained, laminated sedimentary rock composed of clay- and silt-sized particles and enriched in organic matter.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#shale_layer</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
         <IRI>#shale_layer</IRI>
         <Literal xml:lang="pt-br">camada de folhelho</Literal>
@@ -1057,6 +1240,12 @@
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
         <IRI>#shale_layer</IRI>
         <Literal xml:lang="pt-br">Camada de Folhelho  é uma camada constituída por folhelho.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#source</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
@@ -1079,6 +1268,12 @@
         <Literal xml:lang="en">Source is a disposition inhering in a rock layer that, under specific pressure and temperature conditions, confers the capacity to generate and expel hydrocarbons from the organic matter contained within it.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#temperature</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
         <IRI>#temperature</IRI>
         <Literal xml:lang="pt-br">temperatura</Literal>
@@ -1097,6 +1292,12 @@
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
         <IRI>#temperature</IRI>
         <Literal xml:lang="pt-br">Temperature é uma qualidade, representando a medida da energia cinética média das partículas constituintes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#trap</IRI>
+        <Literal xml:lang="en">Reference:
+L. B. Magoon, W. G. Dow, The petroleum system, in: L. B. Magoon, W. G. Dow (Eds.), The Petroleum System: From Source to Trap, volume 60 of AAPG Memoir, American Association of Petroleum Geologists, Tulsa, Oklahoma, 1994, pp. 3–24.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>

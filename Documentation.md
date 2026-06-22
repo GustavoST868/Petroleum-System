@@ -2,7 +2,7 @@
 
 ## 1. Domínio
 
-Um sistema petrolíferoé um modelo conceitual fundamental para a exploração de hidrocarbonetos. Ele representa o conjunto de elementos geológicos e processos responsáveis pela geração, migração, aprisionamento e acumulação de petróleo e gás natural em bacias sedimentares. A modelagem conceitual utilizada para construir a representação desta pesquisa baseou-se nos conceitos abordados por Magoon e Dow (1994) .
+Um sistema petrolífero é um modelo conceitual fundamental para a exploração de hidrocarbonetos. Ele representa o conjunto de elementos geológicos e processos responsáveis pela geração, migração, aprisionamento e acumulação de petróleo e gás natural em bacias sedimentares. A modelagem conceitual utilizada para construir a representação desta pesquisa baseou-se nos conceitos abordados por Magoon e Dow (1994) .
 
 Do ponto de vista geológico, o sistema petrolífero é composto por elementos essenciais, como rocha geradora, rocha reservatório, rocha selante e estruturas de armadilha, que interagem de forma interdependente ao longo do tempo geológico. A rocha geradora contém matéria orgânica que, submetida a condições específicas de temperatura e pressão decorrentes do soterramento sedimentar, passa pelo processo de geração de hidrocarbonetos. Os fluidos gerados são então expulsos e transportados por caminhos de migração, camadas permeáveis ou sistemas de falhas, em direção a zonas de menor pressão, caracterizando o processo de migração. Ao encontrar uma configuração geométrica favorável, os hidrocarbonetos se acumulam e formam depósitos, no processo denominado acumulação.
 
@@ -48,16 +48,16 @@ Entidades que existem de forma completa em qualquer instante de tempo e não dep
 
 **Objetos Geológicos / GeologicalObject**
 
-| Entidade           | Definição                                                                                                                                                     |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Body of Rock       | Um objeto geológico que é um volume contínuo de rocha com extensão espacial definida, podendo corresponder a uma unidade litoestratigráfica.                  |
-| Basin              | Um corpo rochoso que é uma depressão da crosta terrestre propícia ao acúmulo de sedimentos e à formação de sistemas petrolíferos.                             |
-| Layer              | Um corpo rochoso que é uma camada ou estrato com propriedades relativamente homogêneas, delimitado por superfícies estratigráficas.                           |
-| Shale Layer        | Uma camada que é constituída por folhelho.                                                                                                                    |
-| Sandstone Layer    | Uma camada que é constituída por arenito.                                                                                                                     |
-| Limestone Layer    | Uma camada que é constituída por calcário.                                                                                                                    |
-| Dikes              | Um corpo rochoso que é um corpo ígneo tabular intrusivo, capaz de fornecer calor adicional à matéria orgânica adjacente ou de atuar como barreira de selagem. |
-| Aggregate of Rocks | Um agregado de objetos que é composto por múltiplos corpos rochosos e que delimita geometricamente uma armadilha geológica.                                   |
+| Entidade                 | Definição                                                                                                                                                     |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Body of Rock             | Um objeto geológico que é um volume contínuo de rocha com extensão espacial definida, podendo corresponder a uma unidade litoestratigráfica.                  |
+| Basin                    | Um corpo rochoso que é uma depressão da crosta terrestre propícia ao acúmulo de sedimentos e à formação de sistemas petrolíferos.                             |
+| Layer                    | Um corpo rochoso que é uma camada ou estrato com propriedades relativamente homogêneas, delimitado por superfícies estratigráficas.                           |
+| Shale Layer              | Uma camada que é constituída por folhelho.                                                                                                                    |
+| Sandstone Layer          | Uma camada que é constituída por arenito.                                                                                                                     |
+| Limestone Layer          | Uma camada que é constituída por calcário.                                                                                                                    |
+| Dikes                    | Um corpo rochoso que é um corpo ígneo tabular intrusivo, capaz de fornecer calor adicional à matéria orgânica adjacente ou de atuar como barreira de selagem. |
+| Aggregate of Rock Bodies | Um agregado de objetos que é composto por múltiplos corpos rochosos e que delimita geometricamente uma armadilha geológica.                                   |
 
 **Estruturas Geológicas / GeologicalStructure**
 
