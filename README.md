@@ -122,3 +122,136 @@ Entidades que se desenvolvem no tempo e possuem partes temporais.
 | **BFO 2020** | `http://purl.obolibrary.org/obo/bfo/2020/bfo.owl`                                      |
 | **DUL**      | `http://www.ontologydesignpatterns.org/ont/dul/DUL.owl`                                |
 | **GeoCore**  | `https://www.inf.ufrgs.br/bdi/ontologies/geocore/releases/2024-04-06/geocore-full.owl` |
+
+---
+
+# EN Ver.
+
+# Ontological Modeling of the Petroleum System
+
+## 1. Domain
+
+A petroleum system is a fundamental conceptual model for hydrocarbon exploration. It represents the set of geological elements and processes responsible for the generation, migration, trapping, and accumulation of oil and natural gas in sedimentary basins. The conceptual modeling used to build the representation in this research is based on the concepts proposed by Magoon and Dow (1994).
+
+From a geological perspective, a petroleum system is composed of essential elements such as source rock, reservoir rock, seal rock, and trap structures, which interact interdependently over geological time. The source rock contains organic matter which, under specific temperature and pressure conditions resulting from sedimentary burial, undergoes the process of hydrocarbon generation. The generated fluids are then expelled and transported through migration pathways, permeable layers, or fault systems toward zones of lower pressure, characterizing the migration process. Upon encountering a favorable geometric configuration, hydrocarbons accumulate and form deposits in a process known as accumulation.
+
+Terminological diversity between geoscience disciplines and industry data formats, such as RESQML and OSDU, creates significant challenges for semantic interoperability. The proposed ontology, grounded in BFO and aligned with GeoCore, provides a formal and machine-processable representation of domain concepts, making explicit the meaning of entities, their properties, and relationships. This enables data integration between basin and reservoir modeling systems, harmonization of terminology across different disciplines, and support for automated inference over domain knowledge.
+
+## 2. Competency Questions
+
+The following competency questions guided the development of the ontology:
+
+1. What geological entities, substances, qualities, and processes constitute a petroleum system?
+2. How do geological entities and processes interact to enable the generation, migration, trapping, and accumulation of hydrocarbons?
+3. What geological properties and characteristics influence the occurrence and behavior of hydrocarbons in a petroleum system?
+4. How are the components of a petroleum system spatially and functionally related within a sedimentary basin?
+5. What distinguishes the different dispositions associated with rock bodies in a petroleum system, such as seal, source, and reservoir?
+6. How can a petroleum system be formally represented in terms of geological entities, qualities, substances, processes, and their relationships?
+
+---
+
+## 3.1 Independent Continuants
+
+Entities that exist fully at any instant in time and do not depend on another bearer to exist.
+
+### Earth Fluids
+
+| Entities    | Description                                                                                                                                                                     |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Petroleum   | A terrestrial fluid consisting of naturally occurring hydrocarbons in gaseous, liquid, or solid state, originating from thermogenic or biogenic processes in the Earth’s crust. |
+| Oil         | Petroleum in liquid state under surface conditions, mainly generated through thermal maturation of organic matter within the oil window.                                        |
+| Natural Gas | Petroleum in gaseous state under surface conditions, generated through thermogenic or biogenic processes.                                                                       |
+
+### Earth Materials
+
+| Entity           | Description                                                                                                                                                                           |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Organic Matter   | Earth material composed of carbon-based compounds of biological origin, present in source rocks and transformed into hydrocarbons under specific temperature and pressure conditions. |
+| Rock             | A terrestrial material consisting of a natural aggregate of minerals and/or organic matter, whose identity is determined by composition and origin.                                   |
+| Sedimentary Rock | Rock formed by deposition, compaction, and cementation of sediments or by chemical precipitation in surface or subsurface environments.                                               |
+| Igneous Rock     | Rock formed by cooling and solidification of magma, either at the surface (extrusive) or at depth (intrusive).                                                                        |
+| Basalt           | An igneous rock of mafic composition and fine texture, formed by rapid cooling of volcanic lava, common in continental rift settings.                                                 |
+| Limestone        | A sedimentary rock composed mainly of calcium carbonate (calcite or aragonite), of biogenic or chemical origin, and may act as reservoir or seal.                                     |
+| Sandstone        | A sedimentary rock composed of cemented sand grains, characterized by intergranular porosity and permeability, making it a common reservoir candidate.                                |
+| Shale            | A fine-grained, laminated sedimentary rock composed of clay and silt particles, often enriched in organic matter and associated with source and seal functions.                       |
+
+### Geological Objects
+
+| Entity             | Description                                                                                                                               |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Body of Rock       | A geological object that is a continuous rock volume with defined spatial extent, potentially corresponding to a lithostratigraphic unit. |
+| Basin              | A rock body representing a crustal depression favorable to sediment accumulation and petroleum system formation.                          |
+| Layer              | A rock body that is a stratum with relatively homogeneous properties, bounded by stratigraphic surfaces.                                  |
+| Shale Layer        | A layer composed of shale.                                                                                                                |
+| Sandstone Layer    | A layer composed of sandstone.                                                                                                            |
+| Limestone Layer    | A layer composed of limestone.                                                                                                            |
+| Dikes              | A tabular intrusive igneous rock body capable of providing additional heat to adjacent organic matter or acting as a sealing barrier.     |
+| Aggregate of Rocks | An aggregate composed of multiple rock bodies that geometrically defines a geological trap.                                               |
+
+### Geological Structures
+
+| Entity | Description                                                                                                                                                                |
+| ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Trap   | A geological structure forming a tectonic or stratigraphic geometry, materialized in one or more rock bodies, capable of promoting hydrocarbon accumulation and retention. |
+
+---
+
+## 3.2 Dependent Continuants
+
+Entities that depend on a bearer for their existence.
+
+### Qualities
+
+| Entity       | Description                                                                                                                 | Bearer       |
+| ------------ | --------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| Porosity     | A quality inhering in a rock material representing the volumetric proportion of void spaces available for fluid storage.    | Rock, Layer  |
+| Permeability | A quality inhering in a rock material representing its ability to transmit fluids through interconnected pore networks.     | Rock         |
+| Pressure     | A quality inhering in a rock body representing force per unit area, influencing generation and migration processes.         | Layer, Dikes |
+| Temperature  | A quality inhering in a rock body representing the average kinetic energy of its particles, controlling organic maturation. | Layer, Dikes |
+
+### Dispositions
+
+| Entity    | Description                                                                                                                                                                           | Bearer                           |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| Source    | A disposition inhering in a shale layer that, under specific temperature and pressure conditions, enables the generation and expulsion of hydrocarbons from contained organic matter. | Shale Layer                      |
+| Seal      | A disposition inhering in a shale layer that prevents hydrocarbon migration due to low permeability.                                                                                  | Shale Layer                      |
+| Reservoir | A disposition inhering in a rock layer that enables storage and transmission of fluids through effective porosity and permeability.                                                   | Sandstone Layer, Limestone Layer |
+
+---
+
+## 3.3 Occurrents
+
+Entities that unfold in time and have temporal parts.
+
+| Process      | Description                                                                                                                                      |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Generation   | Process of transforming organic matter into hydrocarbons under combined effects of temperature, pressure, and geological time in a source layer. |
+| Migration    | Process of natural transport of hydrocarbons from the source rock to a geological trap through permeable pathways.                               |
+| Accumulation | Process of hydrocarbon concentration in a geological trap, resulting in the formation of an oil and/or gas deposit.                              |
+
+---
+
+## 3.4 Relations
+
+| Relation              | Semantics                                                                                       |
+| --------------------- | ----------------------------------------------------------------------------------------------- |
+| contained_in          | Indicates that hydrocarbons are physically contained within a rock layer.                       |
+| bounds                | Indicates that an aggregate of rock bodies geometrically defines a trap.                        |
+| high_concentration_of | Indicates sufficient organic matter concentration to characterize a potential source rock.      |
+| constituted_by        | Indicates material constitution between a layer and its rock type.                              |
+| bearer_of             | Indicates that a rock layer is the bearer of a functional disposition.                          |
+| inheres_in            | Indicates that a quality (pressure, temperature, porosity, permeability) inheres in its bearer. |
+| has_participant       | Indicates which entities participate in a geological process.                                   |
+| precedes              | Expresses temporal order between generation → migration → accumulation.                         |
+| has_part              | Indicates that a trap is composed of rock layers and/or dikes.                                  |
+
+---
+
+## 5. Imported Ontologies
+
+| Ontology     | Import URL                                                                                                                                                                   |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **BFO 2020** | [http://purl.obolibrary.org/obo/bfo/2020/bfo.owl](http://purl.obolibrary.org/obo/bfo/2020/bfo.owl)                                                                           |
+| **DUL**      | [http://www.ontologydesignpatterns.org/ont/dul/DUL.owl](http://www.ontologydesignpatterns.org/ont/dul/DUL.owl)                                                               |
+| **GeoCore**  | [https://www.inf.ufrgs.br/bdi/ontologies/geocore/releases/2024-04-06/geocore-full.owl](https://www.inf.ufrgs.br/bdi/ontologies/geocore/releases/2024-04-06/geocore-full.owl) |
+
